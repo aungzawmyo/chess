@@ -269,6 +269,8 @@ class ChessBoard:
         """Parse chess notation (e.g., 'e2') to board coordinates."""
         if len(pos) != 2:
             return None
+        if not pos[1].isdigit():
+            return None
         col = ord(pos[0].lower()) - ord('a')
         row = 8 - int(pos[1])
         if 0 <= row < 8 and 0 <= col < 8:
